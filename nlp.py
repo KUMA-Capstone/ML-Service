@@ -5,14 +5,6 @@ from transformers import TFDistilBertForSequenceClassification
 
 from preprocessing import preprocess_story
 
-labels_dict = {
-    0: "very bad",
-    1: "bad",
-    2: "neutral",
-    3: "good",
-    4: "very good",
-}
-
 register_keras_serializable(TFDistilBertForSequenceClassification)
 # bikin fungsi buat ngeload semua lapisan2 dari bert yang bukan lapisan standar dari tf
 def custom_objects():

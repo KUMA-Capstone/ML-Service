@@ -22,7 +22,7 @@ def predict_survey(activities, sub_mood):
     df_inp = pd.DataFrame(lst_inp).transpose()
     df_inp.columns=['full_date', 'date', 'weekday', 'time', 'sub_mood', 'activities']
 
-    result = preprocess_survey(df_inp)
+    result = preprocess_survey(df_inp)[list(X_train.columns)]
     for col in result.columns:
         if result[col].dtype == bool:
             result[col] = result[col].astype(np.uint)
